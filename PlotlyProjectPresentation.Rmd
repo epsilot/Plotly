@@ -1,0 +1,24 @@
+---
+title: "PlotlyProjectPresentation"
+author: "M.Farkov"
+date: '2017-03-14'
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Plotly project
+
+Lets use `airquality` dataset.
+
+
+```{r warning=FALSE,message=FALSE,error=FALSE}
+data(airquality)
+library(plotly)
+plot_ly(airquality,x=~Ozone,y=~Temp,type="scatter",mode="markers",color=~Wind,size=~Solar.R,text=~paste('Solar.R: ',Solar.R)) %>%
+layout(title = "Airquality dataset")
+```
+```
+
